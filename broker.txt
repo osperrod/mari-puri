@@ -1,0 +1,9 @@
+55a8da3978d349158aa62d46b1cb42ea.s2.eu.hivemq.cloud
+
+8883
+
+55a8da3978d349158aa62d46b1cb42ea.s2.eu.hivemq.cloud:8883/mqtt
+
+55a8da3978d349158aa62d46b1cb42ea.s2.eu.hivemq.cloud:8884/mqtt
+
+https://55a8da3978d349158aa62d46b1cb42ea.s2.eu.hivemq.cloud/api/v2/orgs/sbqd6a/clusters/55a8da3978d349158aa62d46b1cb42ea/

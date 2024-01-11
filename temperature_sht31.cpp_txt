@@ -1,0 +1,39 @@
+/**  
+ * @file temperature_fake.cpp
+ * @author Angel Perles
+ * @brief Module to abstract an Adafruit's SHT31 temp & hum. sensor
+ * https://www.adafruit.com/products/2857
+ */
+
+#include <Arduino.h>
+#include <Wire.h>
+#include "Adafruit_SHT31.h"
+#include "temperature.hpp"
+
+#ifdef TEMPERATURE_REAL
+
+static Adafruit_SHT31 sht31 = Adafruit_SHT31();
+
+void temperature_Init(void) 
+{
+  if (!sht31.begin(0x44)) {   // Set to 0x45 for alternate i2c addr
+    for(;;); // Block prigram. Pretty stupid right now
+  }
+}
+
+float temperature_Read(void) 
+{
+    float t;
+    
+    t = sht31.readTemperature();
+    if (isnan(t)) {  // check if 'is not a number'
+      for(;;);  // Pretty stupid
+    }
+
+    return t;
+}
+
+#endif
+
+/*** End of file *********************************************************************************/
+

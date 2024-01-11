@@ -1,0 +1,16 @@
+:Author: aperles
+:Email: {AuthorEmail}
+:Date: 12/04/2023
+:Revision: version#
+:License: Public Domain
+
+MKRWAN lib. 1.1.0 is utilized in this version
+Please, adapt your code following these instructions:
+- Adapt credentials.h to you LoRaWAN configuration
+- Coment/uncomment STANDALONE define in .imo file depending if you want to use the terminal capability or simply to power it an run without requiring a host
+- Comment/uncomment TEMPERATURE_REAL define in temperature.hpp depending on if you want to use the SHTxx real sesnor or the fake module
+
+
+
+
+

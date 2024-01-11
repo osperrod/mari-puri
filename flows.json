@@ -1,0 +1,159 @@
+[
+    {
+        "id": "25dfb11e77fbc2ab",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fee149d82ddac4d6",
+        "type": "mqtt in",
+        "z": "25dfb11e77fbc2ab",
+        "name": "",
+        "topic": "v3/muinf-sci-mkrwan-2023@ttn/devices/eui-a8610a3434418513/up",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "112232e2.d1c68",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "5e85232c588d192d",
+                "dfc0298c2f3db93e"
+            ]
+        ]
+    },
+    {
+        "id": "5e85232c588d192d",
+        "type": "function",
+        "z": "25dfb11e77fbc2ab",
+        "name": "function 1",
+        "func": "var valorSensor = msg.payload; \nmsg.payload = valorSensor;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "45fea7531a56c341",
+                "26aab3442aed23da"
+            ]
+        ]
+    },
+    {
+        "id": "26aab3442aed23da",
+        "type": "ui_gauge",
+        "z": "25dfb11e77fbc2ab",
+        "name": "",
+        "group": "ef480c75.7a548",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "45fea7531a56c341",
+        "type": "debug",
+        "z": "25dfb11e77fbc2ab",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dfc0298c2f3db93e",
+        "type": "debug",
+        "z": "25dfb11e77fbc2ab",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "112232e2.d1c68",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "mqtt://localhost:1883",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ef480c75.7a548",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "975e7f7e.2ab3c8",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "975e7f7e.2ab3c8",
+        "type": "ui_tab",
+        "name": "Tablero",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
